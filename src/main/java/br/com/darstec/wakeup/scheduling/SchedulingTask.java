@@ -21,13 +21,10 @@ public class SchedulingTask {
 
     @Scheduled(fixedDelay = MINUT)
     public void scheduleFutureTask() {
-        System.out.println("schedule ok!");
-
         if (restTemplate != null){
             String resposta = restTemplate.getForObject(
                     "https://dars-scheduled.herokuapp.com/hello", String.class);
             log.info("Resultado da Chamada REST: " + resposta);
         }
-
     }
 }
